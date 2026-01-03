@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+‎<html lang="en">
+‎<head>
+‎    <meta charset="UTF-8">
+‎    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+‎    <title>ISSA Institute - New Year 2026</title>
+‎    <style>
+‎        :root {
+‎            --maroon: #780121;
+‎            --deep-burgundy: #4a0114;
+‎            --vibrant-red: #b00b1e;
+‎            --white: #ffffff;
+‎            --yellow: #ffd700;
+‎            --soft-gold: #ffec8b;
+‎        }
+‎
+‎        body, html {
+‎            margin: 0;
+‎            padding: 0;
+‎            width: 100%;
+‎            height: 100%;
+‎            overflow: hidden;
+‎            font-family: 'Poppins', 'Segoe UI', sans-serif;
+‎            background-color: var(--maroon);
+‎        }
+‎
+‎        /* Better Animated Background: Transitions through rich reds/maroons */
+‎        .bg-layer {
+‎            position: fixed;
+‎            top: 0;
+‎            left: 0;
+‎            width: 100%;
+‎            height: 100%;
+‎            background: linear-gradient(-45deg, var(--deep-burgundy), var(--maroon), var(--vibrant-red), #5c0011);
+‎            background-size: 400% 400%;
+‎            animation: gradientBG 12s ease infinite;
+‎            z-index: -1;
+‎        }
+‎
+‎        @keyframes gradientBG {
+‎            0% { background-position: 0% 50%; }
+‎            50% { background-position: 100% 50%; }
+‎            100% { background-position: 0% 50%; }
+‎        }
+‎
+‎        /* PAGE 1: THE ENVELOPE */
+‎        #page1 {
+‎            display: flex;
+‎            flex-direction: column;
+‎            justify-content: center;
+‎            align-items: center;
+‎            height: 100vh;
+‎            perspective: 1000px;
+‎        }
+‎
+‎        .envelope-container {
+‎            cursor: pointer;
+‎            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+‎        }
+‎
+‎        .envelope-container:hover {
+‎            transform: scale(1.15) rotate(5deg);
+‎        }
+‎
+‎        .mail-icon {
+‎            font-size: 150px;
+‎            animation: float 3.5s ease-in-out infinite;
+‎            filter: drop-shadow(0 0 40px var(--yellow));
+‎        }
+‎
+‎        @keyframes float {
+‎            0%, 100% { transform: translateY(0) rotate(-3deg); }
+‎            50% { transform: translateY(-25px) rotate(3deg); }
+‎        }
+‎
+‎        .tap-text {
+‎            color: var(--white);
+‎            margin-top: 30px;
+‎            letter-spacing: 6px;
+‎            font-weight: 300;
+‎            text-transform: uppercase;
+‎            text-shadow: 0 0 15px rgba(255,255,255,0.6);
+‎            animation: pulse 2s infinite;
+‎        }
+‎
+‎        @keyframes pulse { 50% { opacity: 0.4; transform: scale(0.9); } }
+‎
+‎        /* PAGE 2: THE INVITATION */
+‎        #page2 {
+‎            position: absolute;
+‎            top: 0;
+‎            left: 0;
+‎            width: 100%;
+‎            height: 100vh;
+‎            display: none;
+‎            flex-direction: column;
+‎            align-items: center;
+‎            justify-content: center;
+‎            background: radial-gradient(circle at center, rgba(120, 1, 33, 0.2), rgba(74, 1, 20, 0.8));
+‎        }
+‎
+‎        .invitation-card {
+‎            background: rgba(255, 255, 255, 0.1); /* Frosted Glass */
+‎            backdrop-filter: blur(20px);
+‎            -webkit-backdrop-filter: blur(20px);
+‎            padding: 60px;
+‎            border: 1px solid rgba(255, 255, 255, 0.3);
+‎            border-radius: 50px;
+‎            max-width: 750px;
+‎            width: 85%;
+‎            text-align: center;
+‎            box-shadow: 0 40px 100px rgba(0,0,0,0.4);
+‎            transform-style: preserve-3d;
+‎            transition: transform 0.1s;
+‎            z-index: 5;
+‎        }
+‎
+‎        h1 { font-size: 2.8rem; color: var(--white); margin-bottom: 0; letter-spacing: 6px; font-weight: 200; }
+‎        
+‎        .year-text { 
+‎            font-size: 9rem; 
+‎            font-weight: 900; 
+‎            margin: -15px 0; 
+‎            background: linear-gradient(to bottom, var(--soft-gold), var(--yellow), var(--soft-gold));
+‎            -webkit-background-clip: text;
+‎            -webkit-text-fill-color: transparent;
+‎            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+‎            animation: glow 3s ease-in-out infinite alternate;
+‎        }
+‎
+‎        @keyframes glow {
+‎            from { filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3)); }
+‎            to { filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.8)); }
+‎        }
+‎
+‎        .college-name { 
+‎            font-size: 1.6rem; 
+‎            margin: 25px 0; 
+‎            color: var(--white); 
+‎            font-weight: 700;
+‎            letter-spacing: 2px;
+‎            text-transform: uppercase;
+‎            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+‎        }
+‎
+‎        .divider {
+‎            height: 3px;
+‎            width: 100px;
+‎            background: linear-gradient(to right, transparent, var(--yellow), transparent);
+‎            margin: 25px auto;
+‎        }
+‎
+‎        h2 { font-size: 1.5rem; color: var(--white); margin-top: 10px; font-weight: 400; font-style: italic; opacity: 0.9; }
+‎        
+‎        .event-info {
+‎            font-size: 1.1rem;
+‎            margin-top: 30px;
+‎            color: var(--white);
+‎            line-height: 1.8;
+‎            letter-spacing: 0.5px;
+‎        }
+‎
+‎        /* FIREWORKS CANVAS */
+‎        #canvas {
+‎            position: absolute;
+‎            top: 0;
+‎            left: 0;
+‎            z-index: 1;
+‎            pointer-events: none;
+‎        }
+‎    </style>
+‎</head>
+‎<body>
+‎
+‎    <div class="bg-layer"></div>
+‎
+‎    <div id="page1" onclick="openInvitation()">
+‎        <div class="envelope-container">
+‎            <div class="mail-icon">✉️</div>
+‎        </div>
+‎        <div class="tap-text">Tap for a New Year surprise</div>
+‎    </div>
+‎
+‎    <div id="page2">
+‎        <canvas id="canvas"></canvas>
+‎        <div class="invitation-card" id="card">
+‎            <h1>WELCOME</h1>
+‎            <p class="year-text">2026</p>
+‎            <div class="college-name">ISSA INSTITUTE OF MEDICAL & SCIENCE</div>
+‎            <div class="divider"></div>
+‎            <h2>Healing Hearts, Celebrating New Starts</h2>
+‎            <div class="event-info">
+‎                <p>Join our academic community for a grand New Year Gala.</p>
+‎                <p style="color: var(--yellow); font-weight: bold; font-size: 1.3rem; margin-top: 20px;">
+‎                    JANUARY 1ST | 7:30 PM | COLLEGE AUDITORIUM
+‎                </p>
+‎            </div>
+‎        </div>
+‎    </div>
+‎
+‎    <script>
+‎        function openInvitation() {
+‎            document.getElementById('page1').style.display = 'none';
+‎            document.getElementById('page2').style.display = 'flex';
+‎            startFireworks();
+‎        }
+‎
+‎        const card = document.getElementById('card');
+‎        document.addEventListener('mousemove', (e) => {
+‎            if(document.getElementById('page2').style.display === 'flex') {
+‎                let xAxis = (window.innerWidth / 2 - e.pageX) / 35;
+‎                let yAxis = (window.innerHeight / 2 - e.pageY) / 35;
+‎                card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+‎            }
+‎        });
+‎
+‎        const canvas = document.getElementById('canvas');
+‎        const ctx = canvas.getContext('2d');
+‎        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+‎        window.addEventListener('resize', resize);
+‎        resize();
+‎
+‎        let particles = [];
+‎        function startFireworks() {
+‎            setInterval(() => {
+‎                createFirework(Math.random() * canvas.width, Math.random() * canvas.height * 0.6);
+‎            }, 550);
+‎            animate();
+‎        }
+‎
+‎        function createFirework(x, y) {
+‎            const colors = ['#ffffff', '#ffd700', '#ffec8b', '#ff4d4d', '#ff0033'];
+‎            for (let i = 0; i < 90; i++) {
+‎                particles.push({
+‎                    x, y,
+‎                    color: colors[Math.floor(Math.random() * colors.length)],
+‎                    angle: Math.random() * Math.PI * 2,
+‎                    velocity: Math.random() * 7 + 1,
+‎                    alpha: 1,
+‎                    decay: Math.random() * 0.015 + 0.005
+‎                });
+‎            }
+‎        }
+‎
+‎        function animate() {
+‎            ctx.fillStyle = 'rgba(120, 1, 33, 0.1)'; 
+‎            ctx.fillRect(0, 0, canvas.width, canvas.height);
+‎
+‎            particles.forEach((p, i) => {
+‎                p.alpha -= p.decay;
+‎                p.x += Math.cos(p.angle) * p.velocity;
+‎                p.y += Math.sin(p.angle) * p.velocity + 0.4;
+‎                
+‎                ctx.globalAlpha = p.alpha;
+‎                ctx.fillStyle = p.color;
+‎                ctx.beginPath();
+‎                ctx.arc(p.x, p.y, 1.8, 0, Math.PI * 2);
+‎                ctx.fill();
+‎                
+‎                if (p.alpha <= 0) particles.splice(i, 1);
+‎            });
+‎            requestAnimationFrame(animate);
+‎        }
+‎    </script>
+‎</body>
+‎</html>
